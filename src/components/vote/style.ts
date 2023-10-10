@@ -19,11 +19,12 @@ export const SelectBox = styled(motion.div)`
   background-color: #f2f2f2;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-size: 24px;
   color: gray;
   font-weight: 900;
   &:hover {
-    border: 3px solid skyblue;
+    border: 3px solid #81f7f3;
   }
 `;
 
