@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./style";
-
-export interface VoteTextProps {
-  text: string;
-}
-
-export const SelectBox: React.FC<VoteTextProps> = (props) => {
-  return <S.SelectBoxContainer>{props.text}</S.SelectBoxContainer>;
-};
+import { useSelector } from "react-redux";
+import { RootState } from "../../index";
 
 export const Vote: React.FC = () => {
+  const timeOverData = useSelector((state: RootState) => state.timeOver);
+  const [selectedBox, setSelectedBox] = useState<any>();
+
+  const selectBoxList = ["1번 선택지", "2번 선택지", "3번 선택지"];
+
+  const handleBoxClick = (index: number) => {
+    setSelectedBox(index);
+  };
+
   return (
     <>
       <S.VoteContainer>
-        <SelectBox text="1번"></SelectBox>
-        <SelectBox text="2번"></SelectBox>
-        <SelectBox text="3번"></SelectBox>
+        {selectBoxList.map((value, index) => {
+          return (
+            <S.SelectBox
+              whileTap={{ scale: 0.95 }}
+              onClick={() => handleBoxClick(index)}
+              style={{
+                border: selectedBox === index ? "3px solid blue" : "",
+                display: timeOverData ? "none" : "flex",
+              }}
+              key={index}
+            >
+              {selectBoxList[index]}
+            </S.SelectBox>
+          );
+        })}
       </S.VoteContainer>
     </>
   );

@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
 
 export const TimerContainer = styled.div`
-  margin-top: 30px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -18,4 +18,5 @@ export const TimerText = styled.div`
 export const Timer = styled.div`
   font-size: 70px;
   font-weight: 900;
+  color: black;
 `;

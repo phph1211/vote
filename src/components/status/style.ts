@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const StatusContainer = styled.div`
+  padding: 20px;
+  margin-top: 20px;
   width: 100%;
   height: 250px;
 `;
@@ -19,6 +21,7 @@ export const VoteStatus = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin-top: 10px;
 `;
 
 export const VoteStatusText = styled.p`
@@ -35,7 +38,9 @@ export const ColorCircle = styled.div`
 `;
 
 export const StatusText = styled.p`
-  font-size: 40px;
-  letter-spacing: -8px;
+  margin-top: 20px;
+
+  font-size: 35px;
+  letter-spacing: -5px;
   font-weight: 900;
 `;
